@@ -38,9 +38,8 @@ export class MockAPIServer {
   }) {
     try {
       console.log("Mock API: Creating burn transaction for", request);
-=======
+
       console.log("🔥 Mock API: Creating burn transaction", request);
->>>>>>> f2baa7371ab17fe613a23ed06ff2cb2b66cff4a2
 
       const { publicKey, tokenMint, amount, decimals } = request;
 
@@ -107,7 +106,6 @@ export class MockAPIServer {
       console.error("Mock API: Error creating burn transaction:", error);
       throw new Error(
         `Mock API burn failed: ${error instanceof Error ? error.message : "Unknown error"}`,
-=======
       console.log("✅ Mock API: Burn transaction created successfully");
 
       return {
@@ -133,9 +131,7 @@ export class MockAPIServer {
   }) {
     try {
       console.log("Mock API: Processing reward for", request);
-=======
       console.log("🎁 Mock API: Processing reward", request);
->>>>>>> f2baa7371ab17fe613a23ed06ff2cb2b66cff4a2
 
       const { publicKey, burnSignature, tokenSymbol, burnAmount } = request;
 
@@ -173,7 +169,6 @@ export class MockAPIServer {
       return {
         success: false,
         message: `Mock API reward failed: ${error instanceof Error ? error.message : "Unknown error"}`,
-=======
         rewardSignature: mockRewardSignature,
         rewardAmount: rewardAmount,
         message: `Mock: Reward of ${rewardAmount} SOL sent successfully for burning ${burnAmount} ${tokenSymbol}`,
