@@ -6,9 +6,6 @@ import BurnModal from "@/components/BurnModal";
 import Footer from "@/components/Footer";
 import { TokenInfo } from "@/lib/realApi";
 
-import DevModeIndicator from "@/components/DevModeIndicator";
-import { TokenInfo } from "@/lib/api";
-
 const Index = () => {
   const [selectedToken, setSelectedToken] = useState<TokenInfo | null>(null);
   const [isBurnModalOpen, setIsBurnModalOpen] = useState(false);
