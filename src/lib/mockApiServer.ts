@@ -37,7 +37,6 @@ export class MockAPIServer {
     decimals: number;
   }) {
     try {
-<<<<<<< HEAD
       console.log("Mock API: Creating burn transaction for", request);
 =======
       console.log("🔥 Mock API: Creating burn transaction", request);
@@ -92,7 +91,6 @@ export class MockAPIServer {
         verifySignatures: false,
       });
 
-<<<<<<< HEAD
       // Convert to base64 using native browser APIs
       const base64Transaction = btoa(
         String.fromCharCode(...serializedTransaction),
@@ -134,7 +132,6 @@ export class MockAPIServer {
     burnAmount: number;
   }) {
     try {
-<<<<<<< HEAD
       console.log("Mock API: Processing reward for", request);
 =======
       console.log("🎁 Mock API: Processing reward", request);
@@ -167,7 +164,6 @@ export class MockAPIServer {
       // Mock successful reward
       return {
         success: true,
-<<<<<<< HEAD
         rewardSignature: "mock_reward_signature_" + Date.now(),
         rewardAmount: rewardAmount,
         message: `Mock reward of ${rewardAmount} SOL sent successfully for burning ${burnAmount} ${tokenSymbol}`,
