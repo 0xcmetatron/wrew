@@ -4,12 +4,10 @@ import HeroSection from "@/components/HeroSection";
 import TokenList from "@/components/TokenList";
 import BurnModal from "@/components/BurnModal";
 import Footer from "@/components/Footer";
-<<<<<<< HEAD
 import { TokenInfo } from "@/lib/realApi";
-=======
+
 import DevModeIndicator from "@/components/DevModeIndicator";
 import { TokenInfo } from "@/lib/api";
->>>>>>> f2baa7371ab17fe613a23ed06ff2cb2b66cff4a2
 
 const Index = () => {
   const [selectedToken, setSelectedToken] = useState<TokenInfo | null>(null);
