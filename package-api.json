@@ -1,0 +1,9 @@
+{
+  "name": "bonkburn-api",
+  "version": "1.0.0",
+  "description": "API dependencies for BonkBurn serverless functions",
+  "dependencies": {
+    "@solana/web3.js": "^1.98.2",
+    "@solana/spl-token": "^0.4.13"
+  }
+}
