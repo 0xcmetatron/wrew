@@ -39,8 +39,6 @@ export class MockAPIServer {
     try {
       console.log("Mock API: Creating burn transaction for", request);
 
-      console.log("🔥 Mock API: Creating burn transaction", request);
-
       const { publicKey, tokenMint, amount, decimals } = request;
 
       if (!publicKey || !tokenMint || amount === undefined || amount === null) {
@@ -106,18 +104,6 @@ export class MockAPIServer {
       console.error("Mock API: Error creating burn transaction:", error);
       throw new Error(
         `Mock API burn failed: ${error instanceof Error ? error.message : "Unknown error"}`,
-      console.log("✅ Mock API: Burn transaction created successfully");
-
-      return {
-        transaction: serializedTransaction.toString("base64"),
-        message: "Mock: Transaction created successfully",
-        rpcEndpoint: this.connection.rpcEndpoint,
-      };
-    } catch (error) {
-      console.error("❌ Mock API: Error creating burn transaction:", error);
-      throw new Error(
-        `Mock API: Failed to create burn transaction - ${error instanceof Error ? error.message : "Unknown error"}`,
->>>>>>> f2baa7371ab17fe613a23ed06ff2cb2b66cff4a2
       );
     }
   }
@@ -131,7 +117,6 @@ export class MockAPIServer {
   }) {
     try {
       console.log("Mock API: Processing reward for", request);
-      console.log("🎁 Mock API: Processing reward", request);
 
       const { publicKey, burnSignature, tokenSymbol, burnAmount } = request;
 
@@ -144,9 +129,6 @@ export class MockAPIServer {
       const mockRewardSignature = `mock_reward_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
       console.log("✅ Mock API: Reward processed successfully");
-
-      // Calculate mock reward based on token amount
-      let rewardAmount = 0.004; // Default SOL reward
 
       // Vary reward slightly based on token symbol for realism
       if (tokenSymbol === "BONK") {
@@ -169,16 +151,7 @@ export class MockAPIServer {
       return {
         success: false,
         message: `Mock API reward failed: ${error instanceof Error ? error.message : "Unknown error"}`,
-        rewardSignature: mockRewardSignature,
-        rewardAmount: rewardAmount,
-        message: `Mock: Reward of ${rewardAmount} SOL sent successfully for burning ${burnAmount} ${tokenSymbol}`,
-      };
-    } catch (error) {
-      console.error("❌ Mock API: Error processing reward:", error);
-      return {
-        success: false,
-        message: `Mock API: Failed to send reward - ${error instanceof Error ? error.message : "Unknown error"}`,
->>>>>>> f2baa7371ab17fe613a23ed06ff2cb2b66cff4a2
+        rewardSignature: "",
         rewardAmount: 0,
       };
     }
